@@ -75,6 +75,7 @@ Interactive Commands:
   mail port <value>       Set SMTP mail port.
   mail user <value>       Set SMTP mail user.
   mail password <value>   Set SMTP mail password.
+  mail from <value>       Set Email to send alerts.
   mail to <value>         Set Email to recive alerts.
   mail enable             Enable email notifications.
   mail disable            Disable email notifications.
@@ -376,6 +377,12 @@ func interactiveMode() {
 		case strings.HasPrefix(input, "mail to"):
 			mailto := strings.TrimSpace(input[len("mail to "):])
 			config.ToMail = mailto
+			if err := UpdateConfig(config); err != nil {
+				fmt.Println(err)
+			}
+		case strings.HasPrefix(input, "mail from"):
+			mailfrom := strings.TrimSpace(input[len("mail from "):])
+			config.ToMail = mailfrom
 			if err := UpdateConfig(config); err != nil {
 				fmt.Println(err)
 			}
