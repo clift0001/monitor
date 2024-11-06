@@ -17,6 +17,7 @@ type Config struct {
 	MailUser      string `json:"mail_user"`
 	MailPassword  string `json:"mail_password"`
 	ToMail        string `json:"to_mail"`
+	FromMail      string `json:"from_mail"`
 	MailEnable    bool   `json:"mail_enable"`
 	DiscordChatID string `json:"discord_chat_id"`
 	DiscordToken  string `json:"discord_token"`
