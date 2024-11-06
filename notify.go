@@ -63,7 +63,7 @@ func Notify(session Session) {
 	}
 
 	if config.MailEnable {
-		err := sendMailNotification(config.MailHost, config.MailPort, config.MailUser, config.MailPassword, config.ToMail, message)
+		err := sendMailNotification(config.MailHost, config.MailPort, config.MailUser, config.MailPassword, config.FromMail, config.ToMail, message)
 		if err != nil {
 			fmt.Printf("Error sending Mail notification: %v\n", err)
 		}
