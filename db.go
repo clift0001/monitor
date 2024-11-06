@@ -9,7 +9,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var dbPath = filepath.Join(os.Getenv("HOME"), ".evilginx_monitor", "record_tracker.db")
+var dbPath = filepath.Join(os.Getenv("HOME"), ".monitor", "record_tracker.db")
 
 func initDB() {
 	if _, err := os.Stat(dbPath); os.IsNotExist(err) {
