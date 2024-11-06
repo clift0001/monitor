@@ -25,7 +25,7 @@ type Config struct {
 	DBFilePath    string `json:"dbfile_path"`
 }
 
-var configFilePath = filepath.Join(os.Getenv("HOME"), ".evilginx_monitor", "config.json")
+var configFilePath = filepath.Join(os.Getenv("HOME"), ".monitor", "config.json")
 
 func loadConfig() (*Config, error) {
 	file, err := os.ReadFile(configFilePath)
